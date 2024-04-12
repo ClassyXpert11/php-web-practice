@@ -1,5 +1,28 @@
-<?php 
+<?php
+    function getValid(){
+        $qnty = $_POST["quantity"];
+        return (empty($qnty) || $qnty <= 0) ? "is-invalid":"is-valid" ;
 
+        // if (empty($qnty) || $qnty <= 0) {
+        //     echo "is-invalid";
+        //     array_push($errors,"quantity");
+        // }
+        // else{
+        //     echo "is-valid";
+        // }
+
+    }
+    if (isset($_POST["submit"])){
+        $quantityError = getValid();
+
+        if ($quantityError == "is-valid") {            
+            header("Location:checkout.php");
+            exit();
+        }
+    }
+    
+
+                    
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +51,7 @@
                     <p class="card-text">Adult ticket. For people ages 18+</p>
                     <div class="card-footer d-flex col justify-content-between">
                         <p class="card-text">£12.00</p>
-                        <a href="?type=payment" class="btn btn-primary">Book</a>
+                        <a href="?type=payment&ticket=adult" class="btn btn-primary">Book</a>
                     </div>
                 </div>
             </div>
@@ -40,7 +63,7 @@
                     <p class="card-text">Child ticket. For people under 18</p>
                     <div class="card-footer d-flex col justify-content-between">
                         <p class="card-text">£8.00</p>
-                        <a href="?type=payment" class="btn btn-primary">Book</a>
+                        <a href="?type=payment&ticket=child" class="btn btn-primary">Book</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +75,7 @@
                     <p class="card-text">Family ticket. This is for minimum one adult and two children.</p>
                     <div class="card-footer d-flex col justify-content-between">
                         <p class="card-text">£25.00</p>
-                        <a href="?type=payment" class="btn btn-primary">Book</a>
+                        <a href="?type=payment&ticket=family" class="btn btn-primary">Book</a>
                     </div>
                 </div>
             </div>
@@ -61,36 +84,15 @@
 
     <section <?php if(!isset($_GET["type"])) echo "hidden"?>>
         
-        <form class="row g-3 needs-validation" novalidate action="ticket.php?type=payment" method="post">
+        <form class="row g-3 needs-validation" novalidate method="post">
             <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">Adult tickets</label>
+                <label for="validationCustom01" class="form-label"><?php echo ucfirst($_GET["ticket"])?> tickets</label>
                 <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">Quantity</span>
-                    <input type="text" class="form-control" id="validationCustomUsername" name="adult_ticket_number" aria-describedby="inputGroupPrepend" required>
+                    <input type="number" class="form-control <?php if (isset($_POST["submit"])) echo $quantityError; ?>" id="validationCustomUsername" name="quantity" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">Quantity must be an positive integer.</div>
                 </div>
-                <?php
-
-                    if (isset($_POST["submit"])) {
-                        
-                        $adultTicket = $_POST["adult_ticket_number"];
-            
-                        if (empty($adultTicket)) {
-                            echo"<div class='alert alert-danger' role='alert'>This field is required</div>";
-
-                            // echo"<div class='invalid-feedback'>This field is required</div>";
-                        }
-                        else {
-                            if (is_numeric($adultTicket)) {
-                                echo"<div class='valid-feedback'>Looks good!</div>";
-                            } 
-                            else {
-                                echo"<div class='invalid-feedback'>Please enter a number</div>";
-                            }
-                        }
-                    }
-
-                    
-                ?>
+                <input type="date" class="form-control"  min="today" max="today + 10 days" required/>
             </div>
 
             
