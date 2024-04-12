@@ -12,6 +12,7 @@
         // }
 
     }
+    
     if (isset($_POST["submit"])){
         $quantityError = getValid();
 
