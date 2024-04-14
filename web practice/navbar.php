@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Hotel</a>
@@ -23,9 +23,10 @@
         Account
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Login</a></li>
-        <li><a class="dropdown-item" href="#">Register</a></li>
-        <li><a class="dropdown-item" href="#">Logout</a></li>
+        <li><a class="dropdown-item" href="login.php">Login</a></li>
+        <li><a class="dropdown-item" href="register.php">Register</a></li>
+        <hr>
+        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
       </ul>
     </li>
   </div>
