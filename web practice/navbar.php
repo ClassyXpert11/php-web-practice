@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary nav-underline">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link <?php echo $active == "home" ? 'active' : ''; ?>" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Hotel</a>
+          <a class="nav-link <?php echo $active == "hotel" ? 'active' : ''; ?>" href="hotel.php">Hotel</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ticket.php">Ticket</a>
+          <a class="nav-link <?php echo $active == "ticket" ? 'active' : ''; ?>" href="ticket.php">Ticket</a>
         </li>
     </ul>
   </div>

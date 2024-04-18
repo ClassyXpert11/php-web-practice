@@ -46,7 +46,10 @@
     </style>
 </head>
 <body>
-    <?php require "navbar.php" ?>
+    <?php 
+    $active = "ticket";
+    require "navbar.php" 
+    ?>
 
     <section <?php if(isset($_GET["type"]) && $_GET["type"] == "payment") echo "hidden"?>>
         <div class="container d-flex justify-content-center gap-5 my-auto">

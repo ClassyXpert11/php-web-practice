@@ -57,10 +57,14 @@
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Anakin Skywalker">
                 </div>
                 <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Expiry date</span>
+                    <input type="month" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="MM/YY">
+                </div>
+                <!-- <div class="input-group mb-3">
                     <span class="input-group-text">Expiry date</span>
                     <input type="text" aria-label="First name" class="form-control" placeholder="MM">
                     <input type="text" aria-label="Last name" class="form-control" placeholder="YY">
-                </div>
+                </div> -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">CVV code</span>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="111">
