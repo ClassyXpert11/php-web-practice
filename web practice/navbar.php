@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link <?php echo $active == "home" ? 'active' : ''; ?>" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link <?php echo $active == "home" ? 'active text-warning' : ''; ?>" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php echo $active == "hotel" ? 'active' : ''; ?>" href="hotel.php">Hotel</a>
+          <a class="nav-link <?php echo $active == "hotel" ? 'active text-warning' : ''; ?>" href="hotel.php">Hotel</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php echo $active == "ticket" ? 'active' : ''; ?>" href="ticket.php">Ticket</a>
+          <a class="nav-link <?php echo $active == "ticket" ? 'active text-warning' : ''; ?>" href="ticket.php">Ticket</a>
         </li>
     </ul>
   </div>
