@@ -6,10 +6,12 @@
     $hostName = "localhost";
     $dbuser = "root";
     $dbPassword = "";
-    $dbName = "login_register";
+    $dbName = "web_practice_db";
+
     $conn = mysqli_connect($hostName, $dbuser, $dbPassword, $dbName);
+
     if (!$conn) {
-        die("Something went wrong");
+        die("Connection failed!!!");
     }
 
 ?>
